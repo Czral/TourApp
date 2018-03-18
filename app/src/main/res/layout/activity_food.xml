@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/food_background"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/eight_dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/twenty_four_sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/four_dp"
+        android:text="@string/address"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/twelve_sp" />
+
+    <TextView
+        android:id="@+id/address_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/four_dp"
+        android:text="@string/address"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sixteen_sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/four_dp"
+        android:text="@string/phone"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/twelve_sp" />
+
+    <TextView
+        android:id="@+id/phone_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/four_dp"
+        android:text="@string/phone"
+        android:textColor="@color/black"
+        android:textSize="@dimen/twenty_sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/four_dp"
+        android:text="@string/service"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/twelve_sp" />
+
+    <RatingBar
+        android:id="@+id/service_rating_bar"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/eight_dp"
+        android:stepSize="0.2" />
+
+    <TextView
+        android:id="@+id/food_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/four_dp"
+        android:text="@string/food"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/twelve_sp" />
+
+    <RatingBar
+        android:id="@+id/food_rating_bar"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/eight_dp"
+        android:stepSize="0.2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/four_dp"
+        android:text="@string/value"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/twelve_sp" />
+
+    <RatingBar
+        android:id="@+id/value_rating_bar"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/eight_dp"
+        android:stepSize="0.2" />
+
+</LinearLayout>

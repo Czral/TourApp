@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/night_background"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/eight_dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/twenty_four_sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/four_dp"
+        android:text="@string/address"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/twelve_sp" />
+
+    <TextView
+        android:id="@+id/address_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/four_dp"
+        android:text="@string/address"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sixteen_sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/four_dp"
+        android:text="@string/phone"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/twelve_sp" />
+
+    <TextView
+        android:id="@+id/phone_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/four_dp"
+        android:text="@string/phone"
+        android:textColor="@color/black"
+        android:textSize="@dimen/twenty_sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/four_dp"
+        android:text="@string/description"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/twelve_sp" />
+
+    <TextView
+        android:id="@+id/description_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/four_dp"
+        android:text="@string/food"
+        android:textColor="@color/black"
+        android:textSize="@dimen/twenty_sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/four_dp"
+        android:text="@string/opening_hours"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/twelve_sp" />
+
+    <TextView
+        android:id="@+id/opening_hours_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/eight_dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/twenty_sp" />
+
+</LinearLayout>

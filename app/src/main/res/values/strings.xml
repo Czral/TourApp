@@ -1,0 +1,172 @@
+<resources>
+    <string name="app_name">Tour App</string>
+
+    <string name="tel">tel:</string>
+    <string name="geo">geo:0,0?q=</string>
+    <string name="athens">&#032;Athens</string>
+    <string name="hotels">Hotels</string>
+    <string name="food">Food</string>
+    <string name="nightlife">Nightlife</string>
+    <string name="sights">Sights</string>
+    <string name="comfort_cleanliness">Comfort &#8211; Cleanliness:</string>
+    <string name="address">Address:</string>
+    <string name="phone">Phone:</string>
+    <string name="service">Service:</string>
+    <string name="value">Value:</string>
+    <string name="opening_hours">Opening Hours:</string>
+    <string name="hours">Hours:</string>
+    <string name="description">Description:</string>
+    <string name="rating">Rating:</string>
+
+    <!-- Food Fragment strings. -->
+    <!-- Bairaktaris -->
+    <string name="bairaktaris">Bairaktaris Tavern</string>
+    <string name="five_monastiraki">5 Monastiraki Square</string>
+    <string name="bairaktaris_phone">+30 210 321 6936</string>
+
+    <!-- Fanis Karamanlidika -->
+    <string name="fanis_karamanlidika">Fanis Karamanlidika</string>
+    <string name="fifty_two_evripidou">52 Evripidou St.</string>
+    <string name="fanis_phone">+30 210 325 4184</string>
+
+    <!-- Dinner In The Sky -->
+    <string name="dinner_int_the_sky">Dinner In The Sky</string>
+    <string name="iakchou_voutadon">Iakchou &amp; Voutadon St.</string>
+    <string name="dinner_int_the_sky_phone">+30 694 539 6509</string>
+
+    <!-- Falafellas -->
+    <string name="falafellas">Falafellas</string>
+    <string name="fifty_one_aiolou">51 Aiolou St.</string>
+    <string name="falafellas_phone">+30 210 323 9809</string>
+
+    <!-- Kallipateira -->
+    <string name="kallipateira">Kallipateira</string>
+    <string name="eight_astiggos">8 Astiggos St.</string>
+    <string name="kalipateira_phone">+30 210 321 4152</string>
+
+    <!-- Savvas -->
+    <string name="savvas">Savvas</string>
+    <string name="one_five_one_patission">151 Patission St.</string>
+    <string name="savvas_phone">+30 210 321 1167</string>
+
+
+    <!-- Hotel Fragment strings. -->
+    <!-- Hilton hotel -->
+    <string name="hilton">Hilton Athens</string>
+    <string name="forty_six_vas_sofias">46 Leof. Vasilissis Sofias</string>
+    <string name="hilton_phone">+30 210 728 1000</string>
+
+    <!-- President hotel -->
+    <string name="president">President Hotel</string>
+    <string name="forty_three_kifisias">43 Leof. Kifissias</string>
+    <string name="president_phone">+30 210 698 9000</string>
+
+    <!-- Pan hotel -->
+    <string name="pan">Pan Hotel</string>
+    <string name="eleven_mitropoleos">11 Mitropoleos St.</string>
+    <string name="pan_phone">+30 211 198 8656</string>
+
+    <!-- Phaedra hotel -->
+    <string name="phaedra">Hotel Phaedra</string>
+    <string name="sixteen_cherefontos">16 Cherefontos St.</string>
+    <string name="phaedra_phone">+30 210 323 8461</string>
+
+    <!-- Stratos Vassilikos hotel -->
+    <string name="stratos_vassilikos">Stratos Vassilikos</string>
+    <string name="one_one_four_micha">114 Michalakopoulou St.</string>
+    <string name="stratos_vassilikos_phone">+30 210 770 6611</string>
+
+
+    <!-- History Fragment strings. -->
+    <!-- Acropolis museum -->
+    <string name="acropolis_museum">Acropolis Museum</string>
+    <string name="fifteen_dionisiou">15 Dionisiou Areopagitou St.</string>
+    <string name="acropolis_phone">+30 210 900 0903</string>
+
+    <!-- National Archaeology museum -->
+    <string name="national_archaeology_museum">National Archaeology Museum</string>
+    <string name="forty_four_patission">44 Patission St.</string>
+    <string name="national_archaeology_museum_phone">+30 213 214 4800</string>
+
+    <!-- Byzantine & Christian museum -->
+    <string name="byzantine">Byzantine &amp; Christian Museum</string>
+    <string name="twenty_two_sofias">22 Leof. Vassilisis Sofias</string>
+    <string name="byzantine_phone">+30 213 213 9517</string>
+
+    <!-- Cycladic Art museum -->
+    <string name="museum_cycladic">Museum Of Cycladic Art</string>
+    <string name="four_neophytou">4 Neophytou Douka St.</string>
+    <string name="museum_cycladic_phone">+30 210 722 8321</string>
+
+    <!-- Agora-Ruins Of The Ancient Marketplace -->
+    <string name="agora">Agora: Ruins Of The Ancient Marketplace</string>
+    <string name="twenty_four_adrianou">24 Andrianou St.</string>
+    <string name="agora_phone">+30 210 321 0185</string>
+
+    <!-- Temple Of Olympian Zeus -->
+    <string name="temple_zeus">Temple Of Olympian Zeus</string>
+    <string name="olgas_sofias">Leof. Vassilisis Olgas &amp; Leof. Vasilissis Amalias</string>
+    <string name="temple_zeus_phone">+30 210 922 6330</string>
+
+    <!-- National Historical museum -->
+    <string name="national_historical_museum">National Historical Museum</string>
+    <string name="kolokotronis_square">Kolokotronis Square, 13 Stadiou St.</string>
+    <string name="national_historical_museum_phone">+30 210 323 7617</string>
+
+    <!-- Days -->
+    <string name="monday">Monday:  %s</string>
+    <string name="tuesday">Tuesday:  %s</string>
+    <string name="wednesday">Wednesday:  %s</string>
+    <string name="thursday">Thursday:  %s</string>
+    <string name="friday">Friday:  %s</string>
+    <string name="saturday">Saturday:  %s</string>
+    <string name="sunday">Sunday:  %s</string>
+
+    <!-- History (Museum) hours -->
+    <string name="closed">Closed</string>
+    <string name="nine_to_five">9:00 &#8211; 17:00</string>
+    <string name="nine_to_ten">9:00 &#8211; 22:00</string>
+    <string name="nine_to_eight">9:00 &#8211; 20:00</string>
+    <string name="nine_to_four">9:00 &#8211; 16:00</string>
+    <string name="ten_to_five">10.00 &#8211; 17.00</string>
+    <string name="eight_thirty_to_seven_thirty">8.30 &#8211; 19.30</string>
+    <string name="eight_to_seven_thirty">8.00 &#8211; 19.30</string>
+    <string name="eight_thirty_to_two_thirty">8.30 &#8211; 14.30</string>
+    <string name="one_to_eight">13:00 &#8211; 20:00</string>
+    <string name="ten_to_eight">10.00 &#8211; 20.00</string>
+    <string name="eleven_to_seven">11.00 &#8211; 19.00</string>
+    <string name="eleven_to_five">11.00 &#8211; 17.00</string>
+    <string name="eleven_to_seven_thirty">11.00 &#8211; 19.30</string>
+
+
+    <!-- Night Fragment strings. -->
+    <!-- Wine o'Clock -->
+    <string name="wine_o_clock">Wine O\'Clock</string>
+    <string name="ten_lembesi">10 Lembesi St.</string>
+    <string name="_wine_o_clock_phone">+30 694 837 8922</string>
+    <string name="wine_o_clock_description">Bar with speciality to wine.</string>
+    <string name="one_to_two">13.00 &#8211; 2.00</string>
+
+    <!-- Brettos bar -->
+    <string name="brettos_bar">Brettos Bar</string>
+    <string name="forty_one_kidathineon">41 Kidathineon St.</string>
+    <string name="brettos_phone">+30 210 323 2110</string>
+    <string name="brettos_description">Night bar, great coctails.</string>
+    <string name="ten_to_three">22.00 &#8211; 3.00</string>
+
+    <!-- Seven Times Dance Club -->
+    <string name="seven_times">7 Times Dance Club</string>
+    <string name="thirteen_miaouli">13 Miaouli St.</string>
+    <string name="seven_times_phone">+30 215 515 9771</string>
+    <string name="seven_times_description">Night-Dance club.</string>
+    <string name="eleven_to_three">23.00 &#8211; 3.00</string>
+
+    <!-- A for Athens Cocktail Bar -->
+    <string name="a_for_athens">A for Athens Cocktail Bar</string>
+    <string name="two_four_miaouli">2&#8211;4 Miaouli St.</string>
+    <string name="a_for_athens_phone">+30 210 324 4244</string>
+    <string name="a_for_athens_description">Bar with amazing view.</string>
+    <string name="four_to_one">16.00 &#8211; 1.00</string>
+
+
+</resources>
