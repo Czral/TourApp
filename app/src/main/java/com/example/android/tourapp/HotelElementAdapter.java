@@ -31,7 +31,7 @@ public class HotelElementAdapter extends ArrayAdapter {
 
         if (listView == null) {
             listView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.activity_food, parent, false);
+                    R.layout.food_list_item, parent, false);
         }
 
         LinearLayout linearLayout = listView.findViewById(R.id.linear_layout);

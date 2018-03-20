@@ -30,7 +30,7 @@ public class FoodElementAdapter extends ArrayAdapter {
 
         if (listView == null) {
             listView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.activity_food, parent, false);
+                    R.layout.food_list_item, parent, false);
         }
 
         FoodElement currentFood = (FoodElement) getItem(position);

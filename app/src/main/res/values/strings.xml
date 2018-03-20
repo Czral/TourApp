@@ -3,7 +3,7 @@
 
     <string name="tel">tel:</string>
     <string name="geo">geo:0,0?q=</string>
-    <string name="athens">&#032;Athens</string>
+    <string name="athens">&#160;Athens</string>
     <string name="hotels">Hotels</string>
     <string name="food">Food</string>
     <string name="nightlife">Nightlife</string>
@@ -167,6 +167,5 @@
     <string name="a_for_athens_phone">+30 210 324 4244</string>
     <string name="a_for_athens_description">Bar with amazing view.</string>
     <string name="four_to_one">16.00 &#8211; 1.00</string>
-
 
 </resources>

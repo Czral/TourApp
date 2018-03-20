@@ -81,10 +81,9 @@ public class HotelFragment extends Fragment {
     // ContextMenu function.
     public boolean onContextItemSelected(MenuItem item) {
 
-
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
 
-    //    int u = hotelAdapter.getPosition(hotelElements.indexOf(info.position));
+        //    int u = hotelAdapter.getPosition(hotelElements.indexOf(info.position));
 
         int i = hotelAdapter.getPosition(hotelAdapter.getItem(info.position));
 
