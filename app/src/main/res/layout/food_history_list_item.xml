@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linear_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/food_background"
     android:gravity="center"
     android:orientation="vertical">
@@ -100,5 +100,13 @@
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/eight_dp"
         android:stepSize="0.2" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/eight_dp"
+        android:layout_marginTop="@dimen/eight_dp"
+        android:layout_marginEnd="@dimen/eight_dp"
+        android:background="@color/colorAccent"
+        android:layout_height="@dimen/divider" />
 
 </LinearLayout>

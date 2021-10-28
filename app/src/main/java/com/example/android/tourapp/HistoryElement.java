@@ -1,38 +1,32 @@
 package com.example.android.tourapp;
 
-/**
- * Created by XXX on 13-Mar-18.
- */
-
 public class HistoryElement {
 
     private int mImage;
-
     private String mName;
-
     private String mAddress;
-
     private String mHoursMonday;
-
     private String mHoursTuesday;
-
     private String mHoursWednesday;
-
     private String mHoursThursday;
-
     private String mHoursFriday;
-
     private String mHoursSaturday;
-
     private String mHoursSunday;
-
     private String mPhone;
-
     private float mRating;
 
-    public HistoryElement(int image, String name, String address,
-                          String hoursMonday, String hoursTuesday, String hoursWednesday, String hoursThursday, String hoursFriday, String hoursSaturday, String hoursSunday,
-                          String phone, float rating) {
+    public HistoryElement(int image,
+                          String name,
+                          String address,
+                          String hoursMonday,
+                          String hoursTuesday,
+                          String hoursWednesday,
+                          String hoursThursday,
+                          String hoursFriday,
+                          String hoursSaturday,
+                          String hoursSunday,
+                          String phone,
+                          float rating) {
 
         mImage = image;
         mName = name;
@@ -96,5 +90,4 @@ public class HistoryElement {
     public float getRating() {
         return mRating;
     }
-
 }

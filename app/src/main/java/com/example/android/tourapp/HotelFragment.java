@@ -3,7 +3,6 @@ package com.example.android.tourapp;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
@@ -11,7 +10,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ListView;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import com.example.android.tourapp.databinding.ActivityFragmentRecyclerBinding;
 
 import java.util.ArrayList;
 
@@ -21,58 +25,51 @@ import java.util.ArrayList;
 public class HotelFragment extends Fragment {
 
     // The Hotel ArrayList naming.
-    ArrayList<FoodElement> hotelElements;
-
-    // The Hotel ArrayAdapter naming.
-    HotelElementAdapter hotelAdapter;
+    private ArrayList<FoodHistoryElement> hotelElements;
 
     public HotelFragment() {
         // Required empty public constructor
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        // Inflate the layout for this fragment
-        View fragmentView = inflater.inflate(R.layout.activity_element_list, container, false);
+        ActivityFragmentRecyclerBinding binding = ActivityFragmentRecyclerBinding.inflate(inflater);
+        View root = binding.getRoot();
 
         // Creating the ArrayList of Hotels.
         hotelElements = new ArrayList<>();
 
-        hotelElements.add(new FoodElement(getResources().getString(R.string.hilton), getResources().getString(R.string.forty_six_vas_sofias), getResources().getString(R.string.hilton_phone),
+        hotelElements.add(new FoodHistoryElement(getResources().getString(R.string.hilton), getResources().getString(R.string.forty_six_vas_sofias), getResources().getString(R.string.hilton_phone),
                 5f, 4.8f, 4.2f));
 
-        hotelElements.add(new FoodElement(getResources().getString(R.string.president), getResources().getString(R.string.forty_three_kifisias), getResources().getString(R.string.president_phone),
+        hotelElements.add(new FoodHistoryElement(getResources().getString(R.string.president), getResources().getString(R.string.forty_three_kifisias), getResources().getString(R.string.president_phone),
                 4.5f, 4.5f, 4.2f));
 
-        hotelElements.add(new FoodElement(getResources().getString(R.string.pan), getResources().getString(R.string.eleven_mitropoleos), getResources().getString(R.string.pan_phone),
+        hotelElements.add(new FoodHistoryElement(getResources().getString(R.string.pan), getResources().getString(R.string.eleven_mitropoleos), getResources().getString(R.string.pan_phone),
                 4.5f, 4.4f, 4.6f));
 
-        hotelElements.add(new FoodElement(getResources().getString(R.string.phaedra), getResources().getString(R.string.sixteen_cherefontos), getResources().getString(R.string.phaedra_phone),
+        hotelElements.add(new FoodHistoryElement(getResources().getString(R.string.phaedra), getResources().getString(R.string.sixteen_cherefontos), getResources().getString(R.string.phaedra_phone),
                 4.4f, 4.5f, 5f));
 
-        hotelElements.add(new FoodElement(getResources().getString(R.string.stratos_vassilikos), getResources().getString(R.string.one_one_four_micha), getResources().getString(R.string.stratos_vassilikos_phone),
+        hotelElements.add(new FoodHistoryElement(getResources().getString(R.string.stratos_vassilikos), getResources().getString(R.string.one_one_four_micha), getResources().getString(R.string.stratos_vassilikos_phone),
                 4.5f, 4.4f, 4.4f));
 
         // Adapter setting.
-        hotelAdapter = new HotelElementAdapter(getActivity(), hotelElements);
+        HotelElementAdapter hotelAdapter = new HotelElementAdapter(hotelElements);
 
-        // ListView naming.
-        ListView listView = fragmentView.findViewById(R.id.list_view);
-
-        // ListView setting adapter.
-        listView.setAdapter(hotelAdapter);
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recyclerView.setAdapter(hotelAdapter);
 
         // Making ListView capable of ContextMenu.
-        registerForContextMenu(listView);
-
-        return listView;
+        registerForContextMenu(root);
+        return root;
 
     }
 
     // Creates ContextMenu for Long Click.
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+    public void onCreateContextMenu(@NonNull ContextMenu menu, @NonNull View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         MenuInflater inflater = getActivity().getMenuInflater();
         inflater.inflate(R.menu.menu_list, menu);
@@ -85,7 +82,8 @@ public class HotelFragment extends Fragment {
 
         //    int u = hotelAdapter.getPosition(hotelElements.indexOf(info.position));
 
-        int i = hotelAdapter.getPosition(hotelAdapter.getItem(info.position));
+    //    int i = hotelAdapter.getPosition(hotelAdapter.getItem(info.position));
+        int i = 0;
 
         String call = hotelElements.get(i).getPhone();
 

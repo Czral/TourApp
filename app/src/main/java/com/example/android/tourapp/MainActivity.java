@@ -1,30 +1,34 @@
 package com.example.android.tourapp;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
+
+import com.example.android.tourapp.databinding.ActivityMainBinding;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MainActivity extends AppCompatActivity {
+
+    private final String[] TITLES = {"Hotels", "Food", "Night", "Sights"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        ViewPager viewPager = findViewById(R.id.view_pager);
+        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+        View root = binding.getRoot();
+        setContentView(root);
 
-        viewPager.setAdapter(new FragmentAdapter(getSupportFragmentManager(), this));
+        binding.viewPager.setAdapter(new FragmentAdapter(this));
 
-        FragmentAdapter fragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), this);
+        TabLayoutMediator.TabConfigurationStrategy strategy = (tab, position) -> tab.setText(TITLES[position]);
 
-        viewPager.setAdapter(fragmentAdapter);
+        new TabLayoutMediator(binding.tabLayout, binding.viewPager, strategy).attach();
 
-        TabLayout tabLayout = findViewById(R.id.tab_layout);
-        tabLayout.setupWithViewPager(viewPager);
-
-        tabLayout.setTabTextColors(ResourcesCompat.getColor(getResources(), R.color.white, null), ResourcesCompat.getColor(getResources(), R.color.tab_indicator, null));
+        binding.tabLayout.setTabTextColors(ResourcesCompat.getColor(getResources(), R.color.white, null),
+                ResourcesCompat.getColor(getResources(), R.color.tab_indicator, null));
 
     }
 

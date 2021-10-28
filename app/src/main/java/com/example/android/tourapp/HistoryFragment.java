@@ -1,17 +1,15 @@
 package com.example.android.tourapp;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import com.example.android.tourapp.databinding.ActivityFragmentRecyclerBinding;
 
 import java.util.ArrayList;
 
@@ -20,25 +18,19 @@ import java.util.ArrayList;
  */
 public class HistoryFragment extends Fragment {
 
-    // The History ArrayList naming.
-    ArrayList<HistoryElement> historyElements;
-
-    // The History ArrayAdapter naming.
-    HistoryElementAdapter historyAdapter;
-
     public HistoryFragment() {
         // Required empty public constructor
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        // Inflate the layout for this fragment
-        View fragmentView = inflater.inflate(R.layout.activity_element_list, container, false);
+        ActivityFragmentRecyclerBinding binding = ActivityFragmentRecyclerBinding.inflate(inflater);
+        View root = binding.getRoot();
 
-        // Creating the ArrayList of History Sights.
-        historyElements = new ArrayList<>();
+        // The History ArrayList naming.
+        ArrayList<HistoryElement> historyElements = new ArrayList<>();
 
         historyElements.add(new HistoryElement(R.drawable.acropolis_museum, getResources().getString(R.string.acropolis_museum), getResources().getString(R.string.fifteen_dionisiou),
                 getResources().getString(R.string.nine_to_five), getResources().getString(R.string.nine_to_five), getResources().getString(R.string.nine_to_five), getResources().getString(R.string.nine_to_five),
@@ -68,64 +60,13 @@ public class HistoryFragment extends Fragment {
                 getResources().getString(R.string.closed), getResources().getString(R.string.eight_thirty_to_two_thirty), getResources().getString(R.string.eight_thirty_to_two_thirty), getResources().getString(R.string.eight_thirty_to_two_thirty),
                 getResources().getString(R.string.eight_thirty_to_two_thirty), getResources().getString(R.string.eight_thirty_to_two_thirty), getResources().getString(R.string.eight_thirty_to_two_thirty), getResources().getString(R.string.national_historical_museum_phone), 4f));
 
-        // Adapter setting.
-        historyAdapter = new HistoryElementAdapter(getActivity(), historyElements);
+        HistoryAdapter historyAdapter = new HistoryAdapter(historyElements);
 
-        // ListView naming.
-        ListView listView = fragmentView.findViewById(R.id.list_view);
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recyclerView.setAdapter(historyAdapter);
 
-        // ListView setting adapter.
-        listView.setAdapter(historyAdapter);
+        return root;
 
-        // Making ListView capable of ContextMenu.
-        registerForContextMenu(listView);
-
-        return listView;
-
-    }
-
-    // Creates ContextMenu for Long Click.
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        MenuInflater inflater = getActivity().getMenuInflater();
-        inflater.inflate(R.menu.menu_list, menu);
-    }
-
-    // ContextMenu function.
-    public boolean onContextItemSelected(MenuItem item) {
-
-        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-
-        int i = historyAdapter.getPosition(historyAdapter.getItem(info.position));
-
-        String call = historyElements.get(i).getPhone();
-
-        switch (item.getItemId()) {
-
-            // Using Intent for call.
-            case (R.id.call_item):
-
-                Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse(getResources().getString(R.string.tel) + call));
-                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
-                    startActivity(intent);
-                }
-
-                return true;
-
-            // Using Intent for map (using the address).
-            case (R.id.map_item):
-
-                Intent mapIntent = new Intent(Intent.ACTION_VIEW);
-                mapIntent.setData(Uri.parse(getResources().getString(R.string.geo) + historyElements.get(i).getAddress() + getResources().getString(R.string.athens)));
-                if (mapIntent.resolveActivity(getActivity().getPackageManager()) != null) {
-                    startActivity(mapIntent);
-                }
-
-                return true;
-        }
-
-        return true;
     }
 
 }

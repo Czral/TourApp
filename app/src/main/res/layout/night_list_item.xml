@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/night_background"
     android:gravity="center"
     android:orientation="vertical">
@@ -82,5 +82,13 @@
         android:paddingBottom="@dimen/eight_dp"
         android:textColor="@color/black"
         android:textSize="@dimen/twenty_sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/eight_dp"
+        android:layout_marginTop="@dimen/eight_dp"
+        android:layout_marginEnd="@dimen/eight_dp"
+        android:background="@color/colorAccent"
+        android:layout_height="@dimen/divider" />
 
 </LinearLayout>

@@ -6,7 +6,7 @@
     <string name="athens">&#160;Athens</string>
     <string name="hotels">Hotels</string>
     <string name="food">Food</string>
-    <string name="nightlife">Nightlife</string>
+    <string name="nightlife">Night</string>
     <string name="sights">Sights</string>
     <string name="comfort_cleanliness">Comfort &#8211; Cleanliness:</string>
     <string name="address">Address:</string>
@@ -167,5 +167,6 @@
     <string name="a_for_athens_phone">+30 210 324 4244</string>
     <string name="a_for_athens_description">Bar with amazing view.</string>
     <string name="four_to_one">16.00 &#8211; 1.00</string>
+    <string name="image_of_item">Image of item</string>
 
 </resources>

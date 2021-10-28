@@ -15,36 +15,26 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-/**
- * Created by XXX on 15-Mar-18.
- */
+public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder> {
 
-public class HotelElementAdapter extends RecyclerView.Adapter<HotelElementAdapter.HotelViewHolder> {
+    private static ArrayList<FoodHistoryElement> foodElements;
 
-    private static ArrayList<FoodHistoryElement> hotelElements;
-
-    /**
-     * Provide a reference to the type of views that you are using
-     * (custom ViewHolder).
-     */
-    public static class HotelViewHolder extends RecyclerView.ViewHolder {
+    public static class FoodViewHolder extends RecyclerView.ViewHolder {
 
         private final TextView nameTextView;
         private final TextView addressTextView;
         private final TextView phoneTextView;
-        private final TextView hotelTextView;
 
         private final RatingBar serviceRatingBar;
         private final RatingBar foodRatingBar;
         private final RatingBar valueRatingBar;
 
         @SuppressLint("QueryPermissionsNeeded")
-        public HotelViewHolder(View view) {
+        public FoodViewHolder(View view) {
             super(view);
 
             Context context = view.getContext();
 
-            hotelTextView = view.findViewById(R.id.food_text);
             nameTextView = view.findViewById(R.id.name_text);
             addressTextView = view.findViewById(R.id.address_text);
             phoneTextView = view.findViewById(R.id.phone_text);
@@ -56,7 +46,7 @@ public class HotelElementAdapter extends RecyclerView.Adapter<HotelElementAdapte
             phoneTextView.setOnClickListener(v -> {
 
                 Intent callIntent = new Intent(Intent.ACTION_DIAL);
-                callIntent.setData(Uri.parse(context.getString(R.string.tel) + hotelElements.get(getAdapterPosition()).getPhone()));
+                callIntent.setData(Uri.parse(context.getString(R.string.tel) + foodElements.get(getAdapterPosition()).getPhone()));
                 if (callIntent.resolveActivity(context.getPackageManager()) != null) {
                     context.startActivity(callIntent);
                 }
@@ -66,7 +56,7 @@ public class HotelElementAdapter extends RecyclerView.Adapter<HotelElementAdapte
 
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW);
                 mapIntent.setData(Uri.parse(context.getString(R.string.geo) +
-                        hotelElements.get(getAdapterPosition()).getAddress() +
+                        foodElements.get(getAdapterPosition()).getAddress() +
                         context.getString(R.string.athens)));
                 if (mapIntent.resolveActivity(context.getPackageManager()) != null) {
                     context.startActivity(mapIntent);
@@ -75,28 +65,27 @@ public class HotelElementAdapter extends RecyclerView.Adapter<HotelElementAdapte
         }
     }
 
-    public HotelElementAdapter(ArrayList<FoodHistoryElement> hotels) {
-        hotelElements = hotels;
+    public FoodAdapter(ArrayList<FoodHistoryElement> foods) {
+        foodElements = foods;
     }
 
     // Create new views (invoked by the layout manager)
     @NonNull
     @Override
-    public HotelElementAdapter.HotelViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+    public FoodViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         // Create a new view, which defines the UI of the list item
         View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.food_history_list_item, viewGroup, false);
 
-        return new HotelViewHolder(view);
+        return new FoodViewHolder(view);
     }
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(@NonNull HotelElementAdapter.HotelViewHolder viewHolder, final int position) {
+    public void onBindViewHolder(@NonNull FoodViewHolder viewHolder, final int position) {
 
-        FoodHistoryElement currentFood = hotelElements.get(position);
+        FoodHistoryElement currentFood = foodElements.get(position);
 
-        viewHolder.hotelTextView.setText(R.string.comfort_cleanliness);
         viewHolder.nameTextView.setText(currentFood.getName());
         viewHolder.addressTextView.setText(currentFood.getAddress());
         viewHolder.phoneTextView.setText(currentFood.getPhone());
@@ -108,9 +97,9 @@ public class HotelElementAdapter extends RecyclerView.Adapter<HotelElementAdapte
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        if (hotelElements != null) {
+        if (foodElements != null) {
 
-            return hotelElements.size();
+            return foodElements.size();
         }
         return 0;
     }

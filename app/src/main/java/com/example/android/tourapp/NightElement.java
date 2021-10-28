@@ -7,23 +7,22 @@ package com.example.android.tourapp;
 public class NightElement {
 
     private String mName;
-
     private String mAddress;
-
     private String mPhone;
-
     private String mDescription;
-
     private String mHours;
 
-    public NightElement(String name, String address, String phone, String description, String hours) {
+    public NightElement(String name,
+                        String address,
+                        String phone,
+                        String description,
+                        String hours) {
 
         mName = name;
         mAddress = address;
         mPhone = phone;
         mDescription = description;
         mHours = hours;
-
     }
 
     public String getName() {
