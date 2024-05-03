@@ -9,7 +9,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -71,18 +70,13 @@ public class HotelFragment extends Fragment {
     // Creates ContextMenu for Long Click.
     public void onCreateContextMenu(@NonNull ContextMenu menu, @NonNull View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        MenuInflater inflater = getActivity().getMenuInflater();
+        MenuInflater inflater = requireActivity().getMenuInflater();
         inflater.inflate(R.menu.menu_list, menu);
     }
 
     // ContextMenu function.
     public boolean onContextItemSelected(MenuItem item) {
 
-        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-
-        //    int u = hotelAdapter.getPosition(hotelElements.indexOf(info.position));
-
-    //    int i = hotelAdapter.getPosition(hotelAdapter.getItem(info.position));
         int i = 0;
 
         String call = hotelElements.get(i).getPhone();
@@ -94,10 +88,8 @@ public class HotelFragment extends Fragment {
 
                 Intent callIntent = new Intent(Intent.ACTION_DIAL);
                 callIntent.setData(Uri.parse(getResources().getString(R.string.tel) + call));
-                if (callIntent.resolveActivity(getActivity().getPackageManager()) != null) {
-                    startActivity(callIntent);
+                startActivity(callIntent);
 
-                }
 
                 return true;
 
@@ -106,9 +98,8 @@ public class HotelFragment extends Fragment {
 
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW);
                 mapIntent.setData(Uri.parse(getResources().getString(R.string.geo) + hotelElements.get(i).getAddress() + getResources().getString(R.string.athens)));
-                if (mapIntent.resolveActivity(getActivity().getPackageManager()) != null) {
                     startActivity(mapIntent);
-                }
+
 
                 return true;
         }
